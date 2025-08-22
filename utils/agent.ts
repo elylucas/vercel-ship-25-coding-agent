@@ -115,6 +115,6 @@ export async function codingAgent(prompt: string, repoUrl?: string) {
   if (sandbox) {
     await sandbox.stop();
   }
-
+  console.log('BBBBB', JSON.stringify(result));
   return { response: result.text };
 }
