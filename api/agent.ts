@@ -1,19 +1,19 @@
-import { codingAgent } from "../utils/agent";
+import { codingAgent } from '../utils/agent';
 
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<Response> {
   const body = await request.json();
-  const { prompt }: { prompt: string } = body;
+  const { prompt, repoUrl }: { prompt: string; repoUrl: string } = body;
 
   try {
-    const result = await codingAgent(prompt);
-    return new Response(JSON.stringify({ result }), {
-      headers: { "Content-Type": "application/json" },
+    const { response } = await codingAgent(prompt, repoUrl);
+    return new Response(JSON.stringify({ prompt, response, repoUrl }), {
+      headers: { 'Content-Type': 'application/json' },
     });
   } catch (e) {
     console.error(e);
-    return new Response(JSON.stringify({ error: "An error occurred" }), {
+    return new Response(JSON.stringify({ error: 'An error occurred' }), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
     });
   }
 }
