@@ -1,3 +1,4 @@
+// Copyright 2025 Ely Lucas
 import { codingAgent } from '../utils/agent';
 
 export async function POST(request: Request): Promise<Response> {
