@@ -1,3 +1,4 @@
+// Copyright 2025 Ely Lucas
 import { generateText, stepCountIs, tool } from 'ai';
 import { z } from 'zod/v4';
 import { type Sandbox } from '@vercel/sandbox';

@@ -1,3 +1,4 @@
+// Copyright 2025 Ely Lucas
 import { codingAgent } from './agent';
 import dotenv from 'dotenv';
 

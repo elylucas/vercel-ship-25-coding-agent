@@ -1,3 +1,4 @@
+// Copyright 2025 Ely Lucas
 // Sandbox uses your  OIDC token to authenticate
 
 import { Sandbox } from "@vercel/sandbox";
